@@ -151,7 +151,7 @@
 
   .text-area {
     width: -webkit-fill-available;
-    font-size: 1rem;
+    font-size: 16px;
     padding: 12px 16px;
     resize: none;
 
@@ -162,7 +162,7 @@
 
   .text-area::placeholder {
     color: variables.$secondary-color;
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
 
