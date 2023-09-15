@@ -1,0 +1,286 @@
+@use '../../styles/variables.scss';
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 80px;
+
+  .contact-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 72px;
+  }
+
+  @media (min-width: 500px) and (max-width: 700px) {
+    width: -webkit-fill-available;
+    padding: 80px 32px;
+
+    .contact-title {
+      text-align: center;
+      line-height: 60px;
+    }
+  }
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    padding: 80px 32px;
+
+    .contact-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+  }
+}
+
+.contact-form {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  gap: 1rem;
+
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.10);
+
+
+
+
+
+  .input-name {
+    width: -webkit-fill-available;
+    display: flex;
+    padding: 12px 16px;
+    gap: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid variables.$light-gray-color;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .input-name:hover {
+    border-radius: 4px;
+    border: 1px solid variables.$gray-color;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .input-name:focus {
+    border-radius: 4px;
+    border: 1px solid variables.$accent-color;
+  }
+
+  .input-email {
+    width: -webkit-fill-available;
+    display: flex;
+    padding: 12px 16px;
+    gap: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid variables.$light-gray-color;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .input-email:hover {
+    border-radius: 4px;
+    border: 1px solid variables.$gray-color;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .input-email:focus {
+    border-radius: 4px;
+    border: 1px solid variables.$accent-color;
+
+  }
+
+  .select-input {
+    display: flex;
+    flex-direction: column;
+
+    select {
+      color: variables.$secondary-color;
+      font-size: 16px;
+      width: -webkit-fill-available;
+      display: flex;
+      padding: 12px 16px;
+      gap: 10px;
+      border-radius: 4px;
+      border: 1px solid variables.$light-gray-color;
+      background: rgba(255, 255, 255, 0.25);
+
+      option {
+        color: variables.$secondary-color;
+        font-size: 16px;
+
+        border-radius: 4px;
+        border: 1px solid variables.$light-gray-color;
+        background: #ffffff40;
+      }
+    }
+
+    select:hover {
+      border-radius: 4px;
+      border: 1px solid variables.$gray-color;
+      background: rgba(255, 255, 255, 0.25);
+
+    }
+  }
+
+
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    width: -webkit-fill-available;
+    padding: 80px 32px;
+
+    .contact-title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+  }
+
+}
+
+.text-area-content {
+  width: -webkit-fill-available;
+  color: variables.$secondary-color;
+
+  .text-area {
+    width: -webkit-fill-available;
+    font-size: 1rem;
+    padding: 12px 16px;
+    resize: none;
+
+    border-radius: 4px;
+    border: 1px solid variables.$light-gray-color;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .text-area::placeholder {
+    color: variables.$secondary-color;
+    font-size: 1rem;
+  }
+}
+
+.information-confirmation-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+
+  .checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid variables.$gray-color;
+    background-color: variables.$light-gray-color;
+    border-radius: 4px;
+    flex-shrink: 0;
+
+
+
+  }
+
+  .checkbox:checked {
+    background-image: url('../../assets/checked.svg');
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 2px solid variables.$accent-color;
+    flex-shrink: 0;
+
+
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+}
+
+
+
+
+
+.button-submit button {
+  display: flex;
+  width: -webkit-fill-available;
+  padding: 12px 32px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  border: none;
+
+  background: variables.$primary-color;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  color: variables.$secondary-color;
+  text-align: center;
+  font-size: 14px;
+
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+
+}
+
+.button-submit button:hover {
+  border-radius: 4px;
+  background: variables.$accent-color;
+
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 52, 52, 0.50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  gap: 1rem;
+
+
+
+  .modal-button {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background: none;
+      color: variables.$secondary-color;
+      border: none;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.error {
+  font-size: 14px;
+  margin-top: 5px;
+  color: red;
+}

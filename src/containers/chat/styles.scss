@@ -1,0 +1,340 @@
+@use '../../styles/variables.scss';
+
+.chat-modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 32px;
+  bottom: 85px;
+  gap: 16px;
+  width: 386px;
+  height: 409px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  z-index: 10;
+  margin-bottom: 16px;
+  padding: 32px 16px 16px 16px;
+  border-radius: 32px;
+  border: 1px solid variables.$secondary-color;
+  background: white;
+
+  @media(max-width: 700px) {
+    width: 310px;
+    height: 409px;
+
+    position: fixed;
+    right: 16px;
+    bottom: 65px;
+  }
+
+  @media(max-width: 400px) {
+    width: 290px;
+    height: 409px;
+
+    position: fixed;
+    right: 16px;
+    bottom: 65px;
+  }
+
+  @media(max-width: 340px) {
+    width: 250px;
+    height: 409px;
+
+    position: fixed;
+    right: 16px;
+    bottom: 65px;
+  }
+
+  @media(max-width: 300px) {
+    width: 210px;
+    height: 409px;
+
+    position: fixed;
+    right: 16px;
+    bottom: 65px;
+  }
+}
+
+.header-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 0px 16px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 20px;
+  padding: 0px 16px;
+}
+
+.show-modal-button {
+
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 5;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  border-radius: 50%;
+
+
+  .icon-show-modal {
+    stroke: #fff;
+    stroke-width: 0;
+    fill: variables.$secondary-color;
+  }
+
+  svg:hover .content-icon {
+    fill: variables.$primary-color;
+    stroke: variables.$secondary-color;
+    transition: all 0.5s ease;
+    background: none;
+  }
+
+
+  @media(max-width: 700px) {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.button-expand-and-compress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid variables.$background-color;
+}
+
+.close-modal-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 5;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  border-radius: 50%;
+
+
+  .icon-close-modal {
+    stroke: #fff;
+    stroke-width: 0;
+    fill: variables.$secondary-color;
+  }
+
+  svg:hover .content-close-icon {
+    fill: variables.$primary-color;
+    stroke: variables.$secondary-color;
+    transition: all 0.5s ease;
+    background: none;
+  }
+
+  @media(max-width: 700px) {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.send-button {
+  display: flex;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  border-radius: 50%;
+
+  .icon-send-chat {
+    stroke: #fff;
+    stroke-width: 0;
+    fill: variables.$primary-color;
+    transform-origin: center;
+  }
+
+  svg:hover .icon-chat {
+    fill: variables.$accent-color;
+    stroke: variables.$secondary-color;
+    transition: all 0.5s ease;
+    background: none;
+
+  }
+
+  svg:hover .stroke-icon1 {
+    transform-origin: center;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    transition-duration: 0.5;
+  }
+
+  svg:hover .stroke-icon2 {
+    transform-origin: center;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    transition-duration: 0.5s;
+  }
+}
+
+
+
+
+
+.chat-modal.expanded {
+  height: 700px;
+
+  @media(max-width: 700px) {
+    height: 500px;
+  }
+}
+
+
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  overflow: auto;
+
+
+}
+
+.chat-content::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.message {
+  border-radius: 5px;
+}
+
+.message.sent {
+  display: flex;
+  justify-content: flex-end;
+  align-self: end;
+
+
+  overflow-wrap: anywhere;
+  padding: 8px 16px;
+  gap: 8px;
+  border-radius: 16px 16px 0px 16px;
+  border: 1px solid variables.$light-gray-color;
+}
+
+.bot-message {
+  display: flex;
+  align-self: self-start;
+  gap: 4px;
+
+  .bot-icon {
+    align-self: self-start;
+  }
+
+  .bot-text {
+    overflow-wrap: break-word;
+    padding: 8px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-self: initial;
+
+    border-radius: 0px 16px 16px 16px;
+    background: variables.$background-color;
+  }
+}
+
+
+
+.message-icon {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.history-text {
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  color: variables.$secondary-color;
+  font-weight: bold;
+  position: relative;
+
+  padding: 16px;
+  display: none;
+
+  pointer-events: none;
+
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+.input-send-message-container {
+  display: flex !important;
+  justify-content: center;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.input-send-message-container .input-send-message {
+  display: flex;
+  padding: 11px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 16px;
+  flex: 1 0 0;
+  border: 1px solid variables.$gray-color;
+}
+
+
+.input-send-message-container.fixed-bottom {
+  display: flex;
+
+  .send-button {
+    display: flex !important;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    border-radius: 50%;
+
+    .icon-send-chat {
+      stroke: #fff;
+      stroke-width: 0;
+      fill: variables.$primary-color;
+      transform-origin: center;
+    }
+
+    svg:hover .icon-chat {
+      fill: variables.$accent-color;
+      stroke: variables.$secondary-color;
+      transition: all 0.5s ease;
+      background: none;
+
+    }
+
+    svg:hover .stroke-icon1 {
+      transform-origin: center;
+      transform: rotate(-45deg);
+      transition: all 0.5s ease;
+      transition-duration: 0.5;
+    }
+
+    svg:hover .stroke-icon2 {
+      transform-origin: center;
+      transform: rotate(-45deg);
+      transition: all 0.5s ease;
+      transition-duration: 0.5s;
+    }
+  }
+
+}

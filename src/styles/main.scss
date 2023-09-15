@@ -1,0 +1,16 @@
+@use 'variables.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: variables.$font-stack;
+
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  max-width: 2560px;
+}
