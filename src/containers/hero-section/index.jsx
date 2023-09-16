@@ -6,6 +6,7 @@ import spIcon from '../../assets/tipo=branco.svg'
 export function HeroSection() {
   return (
     <section className="header-container">
+      <div className="header-background"></div>
       <div className="header">
         <img className="icon-header" src={spIcon} alt="icon" />
         <div className="header-inf">
