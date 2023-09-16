@@ -48,6 +48,13 @@ export function Chat() {
     }
   }
 
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault() // Evita que a quebra de linha seja inserida no input
+      handleSendMessage()
+    }
+  }
+
   const handleScroll = () => {
     const chatContentElement = chatContentRef.current
     const historyTextElement = historyTextRef.current
@@ -200,7 +207,11 @@ export function Chat() {
               value={newMessage}
               onChange={e => setNewMessage(e.target.value)}
             />
-            <button className="send-button" onClick={handleSendMessage}>
+            <button
+              className="send-button"
+              onClick={handleSendMessage}
+              onKeyDown={handleKeyDown}
+            >
               <svg
                 className="send-icon"
                 width="50"
